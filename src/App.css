@@ -1,38 +1,241 @@
-.App {
+@import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background: #333;
+  font-family: Arial, Helvetica, sans-serif;
+  background: url('./components//layout/images/bg-image.png');
+  background-size: cover;
+  background-position: center;;
+  height: 100%;
+  background-attachment: fixed;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 3rem;
+}
+
+.text-primary {
+  color: #c92c2c;
+}
+
+#header {
+  margin: 6rem 0;
+}
+
+#header h1 {
   text-align: center;
+  font-size: 4.8rem;
+  color: #fff;
+  font-family: 'Courgette';
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* AddContactForm.js Styling */
+
+.add-contact-box {
+  background: #fff;
+  padding: 4rem 3rem;
+  /* width: 50%; */
+  width: 480px;
+  margin-bottom: 5rem;
+  border-radius: 10px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.add-contact-box h2 {
+  text-align: center;
+  font-size: 3.6rem;
+  font-weight: 700;
+  color: #c92c2c;
+  margin-bottom: 2rem;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.add-contact-box .form-group {
+  margin-bottom: 2rem;
+}
+
+.add-contact-box .form-group input {
+  width: 100%;
+  padding: 1rem;
+  border: 2px solid #c92c2c;
+  border-radius: 10px;
+  font-size: 2rem;
+  color: #c92c2c;
+}
+
+.add-contact-box input:focus {
+  outline: none;
+}
+
+::placeholder {
+  /* color: #c92c2c; */
+}
+
+.add-contact-box .add-contact-btn, .edit-contact-btn, .cancel-contact-btn {
+  display: inline-block;
+  background: #c92c2c;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-size: 2.4rem;
+  border-radius: 10px;
+  width: 100%;
+  padding: 2rem 0;
+  margin-top: 2rem;
+}
+
+.edit-contact-btn {
+  background: #db822f;
+}
+
+.cancel-contact-btn {
+  background: #e5e5e5;
+  color: #333;
+}
+
+.flex-50-50 {
   display: flex;
-  flex-direction: column;
+  gap: 4rem;
+  /* justify-content: space-between; */
+}
+
+.add-contact-box {
+  align-self: flex-start;
+}
+
+/* Card Styling */
+.contact-card {
+  background: #fff;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  /* width:50%; */
+  width: 480px;
+  padding: 3rem;
+  border-radius: 10px;
+  margin-bottom: 2.5em;
 }
 
-.App-link {
-  color: #61dafb;
+
+
+.card-info h4 {
+  font-size: 2.5rem;
+  color: #c92c2c;
+  margin-bottom: 1.5rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.card-info .email,
+.card-info .phone {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.card-info .email p,
+.card-info .phone p {
+  font-size: 1.8rem;
+}
+
+.card-info i {
+  color: #c92c2c;
+}
+
+.card-info .btn {
+  display: inline-block;
+  background: green;
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.8rem;
+  padding: 1rem 2rem;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.card-info .card-buttons {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.card-info .edit-btn {
+  background: #db822f;
+}
+
+.card-info .delete-btn {
+  background: #2f7ed8;
+}
+
+/* Alert Styling */
+.danger {
+  background: rgb(194, 25, 25);
+  color: #fff;
+  padding: 2rem;
+  width: 50%;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  display:flex;
+  align-items: center;
+  gap: 1rem;
+  letter-spacing: 3px;
+}
+
+.danger p {
+  font-size: 2rem;
+}
+
+
+
+@media(max-width: 768px) {
+  .flex-50-50 {
+    display: block;
+    /* flex-direction: column; */
+    /* align-items: center; */
+    /* text-align: center; */
+    margin: 0 auto;
   }
-  to {
-    transform: rotate(360deg);
+
+  .add-contact-box {
+    margin: auto;
+    margin-bottom: 3rem;
+  }
+
+  .contact-card {
+    margin: auto;
+    margin-bottom: 2rem;
+  }
+}
+
+@media(max-width: 500px) {
+  .add-contact-box,
+  .contact-card {
+    width: 300px;
+  }
+
+  .contact-card {
+    flex-direction: column;
+    text-align: center;
+    margin-bottom: 2rem;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .card-info {
+    margin-top: 2rem;
+    /* text-align: center; */
+  }
+
+  .card-buttons {
+    flex-direction: column;
   }
 }

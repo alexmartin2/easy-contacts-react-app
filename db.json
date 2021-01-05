@@ -1,0 +1,16 @@
+{
+  "contacts": [
+    {
+      "name": "John Doe",
+      "email": "jdoe@gmail.com",
+      "phone": "555 555 5555",
+      "id": 1
+    },
+    {
+      "name": "Alex",
+      "email": "alex@codecourse.com",
+      "phone": "555-555-4444",
+      "id": 2
+    }
+  ]
+}
