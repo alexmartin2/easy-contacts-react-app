@@ -11,19 +11,19 @@ const App = () => {
   const [current, setCurrent] = useState(null);
   const [alert, setAlert] = useState(null);
 
-//   useEffect(() => {
-//     async function fetchData() {
-//       const res = await fetch("/contacts", {
-//         method: "GET",
-//         headers: {
-//           "Content-type": "application/json"
-//         },
-//       });
-//       const resData = await res.json();
-//       setContacts(resData);
-//     }
-//     fetchData();
-//   }, []);
+  useEffect(() => {
+    async function fetchData() {
+      const res = await fetch("https://easy-contacts-react-app.herokuapp.com/contacts", {
+        method: "GET",
+        headers: {
+          "Content-type": "application/json"
+        },
+      });
+      const resData = await res.json();
+      setContacts(resData);
+    }
+    fetchData();
+  }, []);
 
   const addContact = async contact => {
     const res = await fetch("http://localhost:5000/contacts", {
