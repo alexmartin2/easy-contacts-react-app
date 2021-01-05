@@ -13,7 +13,7 @@ const App = () => {
 
   useEffect(() => {
     async function fetchData() {
-      const res = await fetch("https://easy-contacts-react-app.herokuapp.com/contacts", {
+      const res = await fetch("/contacts", {
         method: "GET",
         headers: {
           "Content-type": "application/json"
