@@ -38,6 +38,5 @@
   },
   "devDependencies": {
     "json-server": "^0.16.3"
-  },
-  "proxy": "https://easy-contacts-react-app.herokuapp.com"
+  }
 }
